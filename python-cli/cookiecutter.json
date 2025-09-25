@@ -1,0 +1,13 @@
+{
+    "project_name": "My CLI App",
+    "project_slug": "my-cli-app",
+    "package_name": "my_cli_app",
+    
+
+    "author_name": "First Second",
+    "author_email": "author@myoffice.team",
+    
+    "description": "A Python CLI application scaffolded with Typer, uv, and pytest.",
+
+    "python_version": "3.11"
+}

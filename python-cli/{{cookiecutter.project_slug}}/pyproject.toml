@@ -1,0 +1,31 @@
+[project]
+name = "{{cookiecutter.project_slug}}"
+version = "0.0.1"
+description = "{{cookiecutter.description}}"
+authors = [
+    { name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}" }
+]
+readme = "README.md"
+requires-python = ">= {{cookiecutter.python_version}}"
+
+dependencies = [
+    "typer>=0.9.0",
+]
+
+[project.scripts]
+{{cookiecutter.project_slug}} = "{{cookiecutter.package_name}}:app"
+
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "ruff>=0.12.5",
+    "mypy>=1.17.1",
+    "pre-commit>=4.3.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.2,<0.9.0"]
+build-backend = "uv_build"
+
