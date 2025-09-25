@@ -15,7 +15,7 @@ def main(
     ctx: typer.Context,
     verbose: bool = typer.Option(False, "--verbose", "-v", help="Enable verbose logging"),
     debug: bool = typer.Option(False, "--debug", help="Enable debug logging (very verbose)"),
-):
+) -> None:
 
     log_level = logging.DEBUG if debug else (logging.INFO if verbose else logging.WARNING)
     configure_logging(log_level)
@@ -24,13 +24,13 @@ def main(
     ctx.obj = {"VERBOSE": verbose, "DEBUG": debug}
 
 @app.command()
-def version(ctx: typer.Context):
+def version(ctx: typer.Context) -> None:
     logger.info(f"Called {ctx.command.name}")
     
     typer.echo(f"{{cookiecutter.project_name}} version is {__version__}")
 
 @app.command()
-def hello(ctx: typer.Context, name: str = "World"):
+def hello(ctx: typer.Context, name: str = "World") -> None:
     logger.info(f"Called {ctx.command.name}")
     
     typer.echo(f"Hello, {name}!")

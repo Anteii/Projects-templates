@@ -3,6 +3,6 @@ from {{cookiecutter.package_name}}.cli import app
 
 runner = CliRunner()
 
-def test_hello():
+def test_hello() -> None:
     result = runner.invoke(app, ["hello", "--name", "Tester"])
     assert "Hello, Tester!" in result.output
